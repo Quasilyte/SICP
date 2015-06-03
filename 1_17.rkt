@@ -1,6 +1,6 @@
 #lang racket
 
-(provide fast-mul)
+;; 1_18 is also here.
 
 (define (mul-guard fn a b)
   (cond ([= 0 b] 0)
@@ -28,7 +28,7 @@
       (fast-mul-iter a b a)))
   (mul-guard entry-point a b))
 
-; (for ([i 6])
-;   (let ([result (mul 5 i)] [fast-result (fast-mul 5 i)])
-;     (display (list 5 "*" i "=" fast-result))
-;     (displayln (= (* 5 i) result fast-result))))
+(for ([i 6])
+  (let ([result (mul 5 i)] [fast-result (fast-mul 5 i)])
+    (display (list 5 "*" i "=" fast-result))
+    (displayln (= (* 5 i) result fast-result))))
